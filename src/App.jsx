@@ -1,6 +1,6 @@
-import './app/css/App.css'
-import {Header} from "./widgets/Header.jsx";
-import {Home} from "./pages/Home.jsx";
+import './ui/css/App.css'
+import {Header} from "./ui/widgets/Header.jsx";
+import {Home} from "./ui/pages/home/Home.tsx";
 
 function App() {
     return (

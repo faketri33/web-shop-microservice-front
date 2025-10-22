@@ -1,10 +1,16 @@
 import React from 'react';
+import {Product} from "@/domain/entities/product/Product";
 
-const ProductCard = ({ product }) => {
+interface ProductCardProps {
+    product: Product
+}
+
+const ProductCard: React.FC<ProductCardProps> = ({product}) => {
     return (
-        <div className="border rounded-lg shadow hover:shadow-md transition p-4 bg-white flex flex-col items-center text-center">
+        <div
+            className="border rounded-lg shadow hover:shadow-md transition p-4 bg-white flex flex-col items-center text-center">
             <img
-                src={product.image}
+                src={product.image[0]}
                 alt={product.name}
                 className="w-full h-40 object-cover mb-3 rounded"
             />

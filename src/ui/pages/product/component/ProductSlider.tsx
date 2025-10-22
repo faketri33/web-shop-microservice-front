@@ -1,12 +1,18 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import ProductCard from "./ProductCard.jsx";
+import ProductCard from "@/ui/pages/product/component/ProductCard";
+import {Product} from "@/domain/entities/product/Product";
 
-export const ProductSlider = ({ products, title }) => {
+interface ProductSliderProps {
+    products: Product[];
+    title: string;
+}
+
+export const ProductSlider: React.FC<ProductSliderProps> = ({products, title}) => {
     return (
         <div className="my-8">
-            {title && <h3 className="text-xl font-semibold mb-4">{title}</h3>}
+            <h2 className="text-3xl font-bold leading-tight"> {title} </h2>
             <Swiper
                 spaceBetween={16}
                 breakpoints={{
