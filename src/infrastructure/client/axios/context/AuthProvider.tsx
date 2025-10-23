@@ -1,6 +1,6 @@
 import React, { useMemo, useRef, useState } from "react";
 import { generatePkcePair } from "../pkce/pkce";
-import { AuthContext } from "@/infrastructure/client/context/AuthContext";
+import { AuthContext } from "@/infrastructure/client/axios/context/AuthContext";
 
 const KEYCLOAK_BASE = import.meta.env.VITE_KEYCLOAK_BASE as string;
 const CLIENT_ID = import.meta.env.VITE_KEYCLOAK_CLIENT_ID as string;
@@ -21,6 +21,8 @@ interface TokenResponse {
     expires_in?: number | string;
     [key: string]: any;
 }
+
+export type AuthProvider = {};
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [tokens, setTokens] = useState<Tokens | null>(null);

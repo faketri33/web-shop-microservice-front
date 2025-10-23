@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-export function createAxiosInstance(auth: AuthProvider) {
+export function createAxiosInstance(auth: any) {
     const instance = axios.create({
         baseURL: import.meta.env.VITE_BASE_URL || '/',
         timeout: 15000

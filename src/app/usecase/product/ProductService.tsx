@@ -1,13 +1,19 @@
-import {ProductRepository} from "@/infrastructure/product/ProductRepository";
+import {IProductRepository} from "@/infrastructure/product/IProductRepository";
 import {Product} from "@/domain/entities/product/Product";
 
+export class ProductService implements IProductRepository {
 
-export class ProductService implements ProductRepository {
+    private readonly repo: IProductRepository;
+
+    constructor(repo: IProductRepository) {
+        this.repo = repo;
+    }
+
     fetchAll(): Promise<Product[]> {
-        return Promise.resolve([]);
+        return this.repo.fetchAll();
     }
 
     fetchById(id: string): Promise<Product | null> {
-        return Promise.resolve(null);
+        return this.repo.fetchById(id);
     }
 }
